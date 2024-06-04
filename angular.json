@@ -71,12 +71,15 @@
               "browserTarget": "wedding-site:build:development"
             }
           },
+          "options": {
+            "proxyConfig": "proxy.config.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wedding-site:build"
+            "buildTarget": "wedding-site:build"
           }
         },
         "test": {

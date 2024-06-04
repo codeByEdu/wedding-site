@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { StripeCardElement, StripeCardElementOptions } from '@stripe/stripe-js';
+import { mergeMap } from 'rxjs/operators';
+
 import { StripeService } from 'ngx-stripe';
 
 @Component({
@@ -8,45 +9,27 @@ import { StripeService } from 'ngx-stripe';
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
-
-
 export class PaymentComponent {
+  constructor(
+    private http: HttpClient,
+    private stripeService: StripeService
+  ) { }
 
-  paymentForm: FormGroup;
-  card!: StripeCardElement;
-  cardOptions: StripeCardElementOptions = {
-    style: {
-      base: {
-        iconColor: '#666EE8',
-        color: '#31325F',
-        fontWeight: '300',
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSize: '18px',
-        '::placeholder': {
-          color: '#CFD7E0'
+  checkout() {
+    // Check the server.js tab to see an example implementation
+    this.http.post('http://localhost:4242/api/create-checkout-session', {})
+      .pipe(
+        mergeMap((session: any) => {
+          return this.stripeService.redirectToCheckout({ sessionId: session.id })
+        })
+      )
+      .subscribe(result => {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, you should display the localized error message to your
+        // customer using `error.message`.
+        if (result.error) {
+          alert(result.error.message);
         }
-      }
-    }
-  };
-
-  constructor(private formBuilder: FormBuilder, private stripeService: StripeService) {
-    this.paymentForm = this.formBuilder.group({
-      name: ['', Validators.required]
-    });
-  }
-
-  submitPayment(name: string) {
-    if (this.paymentForm.valid) {
-      this.stripeService.createToken(this.card, { name:  name })
-        .subscribe(result => {
-          if (result.token) {
-            // Send the token to your server to process the payment
-            console.log(result.token.id);
-          } else if (result.error) {
-            // Display the error to the user
-            console.log(result.error.message);
-          }
-        });
-    }
+      });
   }
 }

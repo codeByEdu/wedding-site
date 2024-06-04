@@ -1,14 +1,15 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgxStripeModule, StripeService } from 'ngx-stripe';
+import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CountdownComponent } from './components/countdown/countdown.component';
 import { CerimoniaComponent } from './components/cerimonia/cerimonia.component';
 import { ConfirmaPresencaComponent } from './components/confirma-presenca/confirma-presenca.component';
+import { CountdownComponent } from './components/countdown/countdown.component';
 import { ListaPresentesComponent } from './components/lista-presentes/lista-presentes.component';
 import { PaymentComponent } from './components/payment/payment.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,14 +17,20 @@ import { PaymentComponent } from './components/payment/payment.component';
     CerimoniaComponent,
     ConfirmaPresencaComponent,
     ListaPresentesComponent,
-    PaymentComponent,
-    
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgxStripeModule.forRoot(environment.stripePublishableKey)
+
   ],
-  providers: [],
+  providers: [
+    StripeService
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+};
+

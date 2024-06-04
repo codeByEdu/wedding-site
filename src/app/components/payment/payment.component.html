@@ -1,8 +1,3 @@
-<form  (ngSubmit)="submitPayment('teste')">
-    <div class="form-group">
-      <label for="card-element">Credit or Debit Card</label>
-      <div id="card-element"></div>
-      <div id="card-errors" role="alert"></div>
-    </div>
-    <button type="submit" [disabled]="paymentForm.invalid">Pay</button>
-  </form>
+<button (click)="checkout()">
+  GO TO CHECKOUT
+</button>
