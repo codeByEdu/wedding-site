@@ -8,13 +8,15 @@
     <div class="lista-presentes">
         <div *ngFor="let presente of presentes" class="presente">
             <div class="info">
-                <img src={{presente.imagem}} >
-                <p><b>{{presente.nome}}</b><p>
+                <img src={{presente.metadata.imagem}}>
+                <p><b>{{presente.name}}</b>
+                <p>
                 <div class="valor">
-                    <p>R${{presente.preco}},00</p>
+                    <p>R${{presente.metadata.moeda}},00</p>
                 </div>
             </div>
-            <button class="botao-presente">Presentear</button>
+
+            <app-payment [priceId]=presente.default_price></app-payment>
         </div>
     </div>
 </div>

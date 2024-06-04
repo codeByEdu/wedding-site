@@ -23,8 +23,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxStripeModule.forRoot(environment.stripePublishableKey)
-
+    NgxStripeModule.forRoot(environment.stripePublishableKey),
   ],
   providers: [
     StripeService

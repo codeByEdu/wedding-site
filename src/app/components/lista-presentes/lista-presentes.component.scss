@@ -1,16 +1,17 @@
-.presentes{
- display: flex;
- align-items: center;
+.presentes {
+    display: flex;
+    align-items: center;
 
     flex-direction: column;
     justify-content: center;
     gap: 20px;
 }
 
-.lista-presentes-titulo{
+.lista-presentes-titulo {
     text-align: center;
     font-size: 2em;
 }
+
 .lista-presentes-texto {
     text-align: center;
 }
@@ -21,7 +22,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    
+
     max-width: fit-content;
     justify-content: center;
     flex-direction: row;
@@ -31,23 +32,7 @@
         margin-bottom: 20px;
     }
 
-    .botao-presente {
-        margin-top: 20px;
-        padding: 10px 20px;
-        background-color: #000;
-        border: 2px solid #ffffff;
-        border-radius: 10px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s;
-        color: #fff;
 
-        &:hover {
-            background-color: #63dd79;
-            color: #000000;
-        }
-    }
 
 
     .presente {
@@ -63,18 +48,21 @@
         background-color: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-        font-family: 'Lato',sans-serif;
-        img{
+        font-family: 'Lato', sans-serif;
+
+        img {
             width: 100%;
             height: 200px;
             border-radius: 10px;
             object-fit: cover;
             box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
         }
-       p{
+
+        p {
             margin-top: 15px;
-       }
-        .valor{
+        }
+
+        .valor {
             margin-top: 10px;
             font-size: 1.5em;
         }

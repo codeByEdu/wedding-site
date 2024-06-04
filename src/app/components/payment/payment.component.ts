@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { mergeMap } from 'rxjs/operators';
 
 import { StripeService } from 'ngx-stripe';
@@ -12,12 +12,27 @@ import { StripeService } from 'ngx-stripe';
 export class PaymentComponent {
   constructor(
     private http: HttpClient,
-    private stripeService: StripeService
+    private stripeService: StripeService,
+
   ) { }
+  @Input() priceId: any;
+
 
   checkout() {
+    const bodyRequest =
+    {
+      itens: {
+        price: this.priceId,
+        quantity: 1,
+      },
+      cancel_url: 'http://localhost:4200',
+      success_url: 'http://localhost:4200/success',
+
+    }
+
     // Check the server.js tab to see an example implementation
-    this.http.post('http://localhost:4242/api/create-checkout-session', {})
+    this.http.post('http://localhost:4242/api/create-checkout-session', bodyRequest
+    )
       .pipe(
         mergeMap((session: any) => {
           return this.stripeService.redirectToCheckout({ sessionId: session.id })
