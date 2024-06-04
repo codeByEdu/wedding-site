@@ -15,7 +15,7 @@ export class ListaPresentesComponent implements OnInit {
     objeto: any;
     presentes: any;
     ngOnInit(): void {
-        const response = this.http.get('http://localhost:4242/api/list-products')
+        const response = this.http.get('https://api-stripe-pfiemij80-codebyedus-projects.vercel.app/api/list-products')
         this.objeto = response;
         this.objeto.subscribe((res: any) => {
             this.presentes = res.data;

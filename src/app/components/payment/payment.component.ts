@@ -17,6 +17,7 @@ export class PaymentComponent {
   ) { }
   @Input() priceId: any;
 
+  baseUrl = 'https://api-stripe-pfiemij80-codebyedus-projects.vercel.app/';
 
   checkout() {
     const bodyRequest =
@@ -25,13 +26,13 @@ export class PaymentComponent {
         price: this.priceId,
         quantity: 1,
       },
-      cancel_url: 'http://localhost:4200',
+      cancel_url: '/',
       success_url: 'http://localhost:4200/success',
 
     }
 
     // Check the server.js tab to see an example implementation
-    this.http.post('http://localhost:4242/api/create-checkout-session', bodyRequest
+    this.http.post(this.baseUrl + 'api/create-checkout-session', bodyRequest
     )
       .pipe(
         mergeMap((session: any) => {

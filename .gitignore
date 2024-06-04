@@ -36,12 +36,14 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
-src/environments/*.ts
 
 # System files
 .DS_Store
 Thumbs.db
 .env
+environments/*.ts
+src/environments/*
+
 
 
 src/environments/environment.ts
