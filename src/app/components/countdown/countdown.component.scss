@@ -1,0 +1,34 @@
+
+.contagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+.countdown-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+  // .toolbar,
+  // .container {}
+  
+  .item {
+  background-color: #f4f4f4;
+  height: 80px;
+  width: 90px;
+  border-radius: 5px; ;
+  }
+  .number{
+    font-size: 2em;
+    font-family: 'Great Vibes', cursive;
+    color: #23b9d4;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-family: 'Great Vibes', cursive;
+  }

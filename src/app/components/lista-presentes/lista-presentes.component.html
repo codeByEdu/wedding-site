@@ -1,0 +1,20 @@
+<div class="presentes">
+    <section class="lista-presentes-titulo">
+        <h2>Lista de presentes</h2>
+    </section>
+    <section class="lista-presentes-texto">
+        <p>Escolha um presente para os noivos.</p>
+    </section>
+    <div class="lista-presentes">
+        <div *ngFor="let presente of presentes" class="presente">
+            <div class="info">
+                <img src={{presente.imagem}} >
+                <p><b>{{presente.nome}}</b><p>
+                <div class="valor">
+                    <p>R${{presente.preco}},00</p>
+                </div>
+            </div>
+            <button class="botao-presente">Presentear</button>
+        </div>
+    </div>
+</div>

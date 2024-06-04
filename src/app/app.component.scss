@@ -1,0 +1,86 @@
+$opacityValue: 0.6;
+$fontHeading: 'Great Vibes', cursive;
+
+
+.section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+  padding: 40px;
+  position: relative;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+ // background: url("../assets/floral-bg.jpeg");
+ background-color: #f0fdff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+// opacity: $opacityValue;
+}
+
+.toolbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url("../assets/beijo-yup.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  //opacity: $opacityValue;
+  //filter: grayscale(80%);
+}
+
+.toolbar h2 {
+  font-size: 4em;
+  font-family: "Italianno", cursive !important;
+  text-align: center;
+ 
+
+  color: #ffffff;
+}
+
+.toolbar p{
+  font-size: 1.5em;
+  font-family: $fontHeading;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.toolbar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+ flex-direction: column;
+ text-align: center;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh!important;
+
+}
+
+.cerimonia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #d2edfc;
+}
