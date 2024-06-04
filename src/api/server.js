@@ -14,26 +14,34 @@ app.use(bodyParser.json())
 
 
 app.post('/api/create-checkout-session', async (req, res) => {
-    console.log(req.body.itens)
-    const session = await stripe.checkout.sessions.create({
-        payment_method_types: ['card'],
-        line_items: [req.body.itens],
-        mode: 'payment',
-        success_url: req.body.success_url,
-        cancel_url: req.body.cancel_url,
+    try {
+        console.log(req.body.itens);
 
-    });
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            line_items: [req.body.itens],
+            mode: 'payment',
+            success_url: req.body.success_url,
+            cancel_url: req.body.cancel_url,
+        });
 
-    res.json({ id: session.id });
+        res.json({ id: session.id });
+    } catch (error) {
+        console.error('Error creating checkout session:', error);
+        res.status(500).json({ error: 'Failed to create checkout session' });
+    }
 });
+
 
 app.get('/api/list-products', async (req, res) => {
-    const products = await stripe.products.list({ limit: 50 });
-    res.json(products);
+    try {
+        const products = await stripe.products.list({ limit: 50 });
+        res.json(products);
+    } catch (error) {
+        console.error('Error listing products:', error);
+        res.status(500).json({ error: 'Failed to list products' });
+    }
 });
-
-
-
 
 
 app.listen(4242, () => console.log(`Listening on port ${4242}!`));
