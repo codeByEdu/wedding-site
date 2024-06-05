@@ -17,7 +17,7 @@ export class PaymentComponent {
   ) { }
   @Input() priceId: any;
 
-  baseUrl = 'https://api-stripe-pfiemij80-codebyedus-projects.vercel.app/';
+  baseUrl = 'https://api-stripe-five.vercel.app/';
 
   checkout() {
     const bodyRequest =
