@@ -27,12 +27,12 @@ export class PaymentComponent {
         quantity: 1,
       },
       cancel_url: '/',
-      success_url: 'http://localhost:4200/success',
+      success_url: '/',
 
     }
-
+    const lambdaApiUrl = 'https://eoeslxtzxj.execute-api.us-east-1.amazonaws.com/integration-stripe';
     // Check the server.js tab to see an example implementation
-    this.http.post(this.baseUrl + 'api/create-checkout-session', bodyRequest
+    this.http.post(lambdaApiUrl, bodyRequest
     )
       .pipe(
         mergeMap((session: any) => {

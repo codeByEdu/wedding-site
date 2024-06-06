@@ -9,14 +9,14 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class ListaPresentesComponent implements OnInit {
-    baseUrl = 'https://api-stripe-five.vercel.app/';
+    baseUrl = 'https://eoeslxtzxj.execute-api.us-east-1.amazonaws.com/list-products-stripe';
     constructor(
         private http: HttpClient,
     ) { }
     objeto: any;
     presentes: any;
     ngOnInit(): void {
-        const response = this.http.get(this.baseUrl + '/api/list-products')
+        const response = this.http.get(this.baseUrl)
         this.objeto = response;
         this.objeto.subscribe((res: any) => {
             this.presentes = res.data;
