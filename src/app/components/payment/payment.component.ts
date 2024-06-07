@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { mergeMap } from 'rxjs/operators';
 
+import { Location } from '@angular/common';
 import { StripeService } from 'ngx-stripe';
 
 @Component({
@@ -11,32 +12,36 @@ import { StripeService } from 'ngx-stripe';
 })
 export class PaymentComponent {
   constructor(
+    private location: Location,
     private http: HttpClient,
     private stripeService: StripeService,
 
   ) { }
   @Input() priceId: any;
+  getDomain(): string {
+    return window.location.href;
+  }
 
-  baseUrl = 'https://api-stripe-five.vercel.app/';
 
   checkout() {
-    const bodyRequest =
-    {
+
+    const bodyRequest = {
       itens: {
         price: this.priceId,
         quantity: 1,
       },
-      cancel_url: '/',
-      success_url: '/',
+      cancel_url: this.getDomain() + 'sucess',
+      success_url: this.getDomain() + 'failed',
 
     }
     const lambdaApiUrl = 'https://eoeslxtzxj.execute-api.us-east-1.amazonaws.com/integration-stripe';
     // Check the server.js tab to see an example implementation
-    this.http.post(lambdaApiUrl, bodyRequest
-    )
+    console.log(bodyRequest);
+    this.http.post(lambdaApiUrl, bodyRequest,
+      { headers: { 'Content-Type': 'application/json' } })
       .pipe(
-        mergeMap((session: any) => {
-          return this.stripeService.redirectToCheckout({ sessionId: session.id })
+        mergeMap((response: any) => {
+          return this.stripeService.redirectToCheckout({ sessionId: response.id })
         })
       )
       .subscribe(result => {

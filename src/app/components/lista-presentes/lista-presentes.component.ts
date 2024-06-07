@@ -20,6 +20,7 @@ export class ListaPresentesComponent implements OnInit {
         this.objeto = response;
         this.objeto.subscribe((res: any) => {
             this.presentes = res.data;
+            console.log(this.presentes);
             this.presentes.forEach((presente: any) => {
                 presente.metadata.moeda = presente.metadata.moeda.replace(/'/g, "");
             })
