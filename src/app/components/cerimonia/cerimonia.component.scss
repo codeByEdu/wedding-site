@@ -1,32 +1,25 @@
-
-.cerimonia{
+.cerimonia {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2em;
     padding: 2em;
-  
-
+    width: 100%;
 }
 
-h1, h2{
-   
+h1,
+h2 {
+
     font-family: "Italianno", cursive !important;
     text-align: center;
 }
 
-.localizacao{
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    gap: 1em;
-}
 
-.text{
+
+p {
+    font-family: "Italianno", cursive !important;
+    font-size: 1.2em;
     text-align: justify;
-    width: 1000px;
+    width: 80%;
 }

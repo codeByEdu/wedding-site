@@ -18,13 +18,13 @@ $fontHeading: 'Great Vibes', cursive;
   right: 0;
   bottom: 0;
   left: 0;
- // background: url("../assets/floral-bg.jpeg");
- background-color: #f0fdff;
+  // background: url("../assets/floral-bg.jpeg");
+  background-color: #f0fdff;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
-// opacity: $opacityValue;
+  // opacity: $opacityValue;
 }
 
 .toolbar::before {
@@ -47,12 +47,13 @@ $fontHeading: 'Great Vibes', cursive;
   font-size: 4em;
   font-family: "Italianno", cursive !important;
   text-align: center;
- 
+  margin-top: -10%;
 
   color: #ffffff;
 }
 
-.toolbar p{
+.toolbar p {
+
   font-size: 1.5em;
   font-family: $fontHeading;
   text-align: center;
@@ -60,27 +61,21 @@ $fontHeading: 'Great Vibes', cursive;
   color: #ffffff;
 }
 
-.toolbar{
+.toolbar {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
- flex-direction: column;
- text-align: center;
+
+  flex-direction: column;
+  text-align: center;
 
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 70vh!important;
 
+.container {
+  min-height: 70vh;
 }
 
 .cerimonia {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background: #d2edfc;
 }
