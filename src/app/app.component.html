@@ -1,23 +1,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <section class="section toolbar">
-  <h2>Eduardo & Melyssa</h2>
-  <p>15 DE DEZEMBRO DE 2024</p>
-  <p>Casa Tarumã</p>
+  <h1>Eduardo & Melyssa</h1>
+  <p class="font-subtitle">15 de dezembro de 2024</p>
+  <p class="font-subtitle">Casa Tarumã</p>
 </section>
-<div class="section container">
-  <app-carrossel [imagens]="[
-    '/assets/nos.jpeg',
-   '/assets/nos-sit.jpeg',
-   '/assets/nos-padrinhos.jpeg']
-  "></app-carrossel>
+<div class="section pt-4">
+  <div class="w-full h-full max-w-6xl mx-auto flex flex-col items-start gap-8">
+    <app-countdown></app-countdown>
+    <app-carrossel class="w-full" [imagens]="[
+      '/assets/nos.jpeg',
+      '/assets/nos-sit.jpeg',
+      '/assets/nos-padrinhos.jpeg']
+    "></app-carrossel>
+  </div>
 </div>
-<div class="section container">
-  <app-countdown></app-countdown>
+<div class="section w-full">
+  <div class="w-full max-w-6xl mx-auto">
+    <app-cerimonia></app-cerimonia>
+  </div>
 </div>
-<div class="section cerimonia">
-  <app-cerimonia></app-cerimonia>
-</div>
-<div class="section container-presentes">
-  <app-lista-presentes></app-lista-presentes>
+<div class="section w-full">
+  <div class="w-full max-w-6xl mx-auto">
+    <app-lista-presentes></app-lista-presentes>
+  </div>
 </div>

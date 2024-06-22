@@ -1,14 +1,21 @@
-<div class="carrossel">
+<!-- <div class="carrossel">
+  <img class="item" [src]="imagens[indexImagemAtiva]" alt="">
     <div class="item" [style.backgroundImage]="
     'url(' + imagens[indexImagemAtiva] + ')'
   "></div>
+</div> -->
 
+<div class="grid md:grid-cols-3 grid-cols-1 w-full">
+  <img class="w-full h-[512px] object-cover object-center" *ngFor="let img of imagens" [src]="img" alt="">
 </div>
+
+
+
 <!-- Botões de controle -->
-<div class="botoes-controle">
+<!-- <div class="botoes-controle">
     <button *ngFor="let imagem of imagens; index as i" [class.ativo]="i === indexImagemAtiva"
         (click)="pararTimer(); ativarImagem(i)"></button>
-</div>
+</div> -->
 
 <!--
   Cria imagens que ficam "escondidas"
@@ -19,4 +26,4 @@
   das imagens do carrossel na primeira
   vez que cada imagem é mostrada na tela.
 -->
-<img *ngFor="let imagem of imagens" [src]="imagem" width="1" height="1" style="opacity: 0; position: fixed" />
+<!-- <img class="w-[500px]" *ngFor="let imagem of imagens" [src]="imagem" width="1" height="1" style="opacity: 0; position: fixed" /> -->

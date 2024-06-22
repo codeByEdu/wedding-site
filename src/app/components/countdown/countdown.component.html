@@ -1,21 +1,22 @@
-<section class="contagem">
-    <h2 class="card-title">Contagem Regressiva</h2>
-    <div class="countdown-content">
-      <div class="item">
-        <div class="number">{{days}}</div>
-        <div class="txt">Dias</div>
-      </div>
-      <div class="item">
-        <div class="number">{{hours}}</div>
-        <div class="txt">Horas</div>
-      </div>
-      <div class="item">
-        <div class="number">{{minutes}}</div>
-        <div class="txt">Minutos</div>
-      </div>
-      <div class="item">
-        <div class="number">{{seconds}}</div>
-        <div class="txt">Segundos</div>
-      </div>
+<section class="w-full flex flex-col gap-4 px-4">
+  <h1>Contagem Regressiva</h1>
+  
+  <div class="grid grid-cols-4">
+    <div class="">
+      <div class="text-4xl">{{days}}</div>
+      <div>Dias</div>
     </div>
-  </section>
+    <div>
+      <div class="text-4xl">{{hours}}</div>
+      <div>Horas</div>
+    </div>
+    <div>
+      <div class="text-4xl">{{minutes}}</div>
+      <div>Minutos</div>
+    </div>
+    <div>
+      <div class="text-4xl">{{seconds}}</div>
+      <div>Segundos</div>
+    </div>
+  </div>
+</section>

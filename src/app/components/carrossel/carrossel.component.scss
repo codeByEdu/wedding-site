@@ -4,16 +4,21 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-
 }
 
 .item {
-
-    background-size: contain;
-    background-repeat: no-repeat;
+    object-fit: cover;
+    object-position: center center;
     height: 400px;
-    width: 60%;
+    width: 100%;
     transition: all 0.5s ease-in-out;
+
+    @media (min-width: 768px) {
+        width: 512px;
+        height: 512px;
+        // object-fit: contain;
+        // object-position: center top;
+    }
 }
 
 .botoes-controle {

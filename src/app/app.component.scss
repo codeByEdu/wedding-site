@@ -5,10 +5,13 @@ $fontHeading: 'Great Vibes', cursive;
 .section {
   min-height: 100vh;
   scroll-snap-align: start;
-  padding: 40px;
   position: relative;
   scroll-behavior: smooth;
   overflow: hidden;
+  
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
 }
 
 .container::before {
@@ -59,6 +62,15 @@ $fontHeading: 'Great Vibes', cursive;
   //filter: grayscale(80%);
 }
 
+h1 {
+  font-size: 56px;
+  color: #fff;
+}
+
+.font-subtitle {
+  font-family: "Playfair Display", serif;
+}
+
 .toolbar h2 {
   font-size: 4em;
   font-family: "Italianno", cursive !important;
@@ -71,7 +83,7 @@ $fontHeading: 'Great Vibes', cursive;
 .toolbar p {
 
   font-size: 1.5em;
-  font-family: $fontHeading;
+  // font-family: $fontHeading;
   text-align: center;
 
   color: #ffffff;
