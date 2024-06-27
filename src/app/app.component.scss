@@ -8,10 +8,47 @@ $fontHeading: 'Great Vibes', cursive;
   position: relative;
   scroll-behavior: smooth;
   overflow: hidden;
-  
+
   @media (min-width: 768px) {
     padding: 40px;
   }
+}
+
+.data-footer {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  position: absolute;
+  color: black !important;
+  bottom: -3.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Ajusta a posição horizontal para o centro */
+  background: rgba(255, 255, 255, 0.927);
+  /* Fundo branco semi-transparente */
+  padding: 2px 20px;
+  /* Espaçamento interno */
+
+  /* Bordas arredondadas */
+  z-index: 2;
+  font-family: "Playfair Display", serif;
+  font-size: xx-large;
+}
+
+.letters {
+
+  margin-top: -15px;
+  color: #99c7de !important;
+  position: absolute;
+  top: 0;
+  left: 3.5%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  z-index: 2;
+  font-size: xx-large;
+  font-weight: 600;
 }
 
 .container::before {
@@ -39,11 +76,30 @@ $fontHeading: 'Great Vibes', cursive;
   left: 0;
   // background: url("../assets/floral-bg.jpeg");
   background-color: #f0fdff;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
   // opacity: $opacityValue;
+}
+
+.quadrado {
+  width: 86%;
+  /* Defina a largura do quadrado */
+  height: 85%;
+  /* Defina a altura do quadrado */
+  border: 2px solid white;
+  /* Defina a largura e a cor da borda */
+  background-color: transparent;
+  /* Cor de fundo do quadrado com opacidade */
+  position: absolute;
+  /* Permite o posicionamento absoluto */
+  top: 50%;
+  /* Centraliza verticalmente */
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: -1;
 }
 
 .toolbar::before {
@@ -53,18 +109,28 @@ $fontHeading: 'Great Vibes', cursive;
   right: 0;
   bottom: 0;
   left: 0;
-  background: url("../assets/beijo-yup.jpeg");
+  background: url("../assets/canto-da-mata.jpg");
   background-size: cover;
-  background-position: center;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  object-fit: cover;
+  background-position: 50% 30%;
   background-repeat: no-repeat;
-  z-index: -1;
-  //opacity: $opacityValue;
-  //filter: grayscale(80%);
+  z-index: -2;
+
+  filter: grayscale(15%);
+  opacity: 0.9;
+
 }
 
 h1 {
   font-size: 56px;
   color: #fff;
+
+  @media (max-width: 768px) {
+    margin-top: 20%;
+  }
 }
 
 .font-subtitle {
@@ -75,8 +141,8 @@ h1 {
   font-size: 4em;
   font-family: "Italianno", cursive !important;
   text-align: center;
-  margin-top: -10%;
 
+  z-index: 1;
   color: #ffffff;
 }
 
@@ -85,13 +151,13 @@ h1 {
   font-size: 1.5em;
   // font-family: $fontHeading;
   text-align: center;
-
+  z-index: 1;
   color: #ffffff;
 }
 
 .toolbar {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100vh;
 
