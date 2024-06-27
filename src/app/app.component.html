@@ -1,9 +1,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="letters">
+  <span>M & E</span>
+</section>
 <section class="section toolbar">
-  <section class="letters">
-    <span>M & E</span>
-  </section>
-
   <div class="quadrado">
     <div class="data-footer">
       <span>15.12.2024</span>
@@ -12,7 +11,12 @@
   <h1>Eduardo & Melyssa</h1>
 </section>
 <div class="section pt-4">
-  <div class="w-full h-full max-w-6xl mx-auto flex flex-col items-start gap-8">
+  <div class="w-full h-full max-w-6xl mx-auto  gap-8">
+    <app-texto-casal></app-texto-casal>
+  </div>
+</div>
+<div class="section pt-4">
+  <div class="w-full h-full max-w-6xl mx-auto flex flex-col items-center gap-8">
     <app-countdown></app-countdown>
     <app-carrossel class="w-full" [imagens]="[
       '/assets/nos.jpeg',

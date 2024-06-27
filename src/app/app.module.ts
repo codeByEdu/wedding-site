@@ -11,6 +11,7 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 import { ListaPresentesComponent } from './components/lista-presentes/lista-presentes.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CarrosselComponent } from './components/carrossel/carrossel.component';
+import { TextoCasalComponent } from './components/texto-casal/texto-casal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { CarrosselComponent } from './components/carrossel/carrossel.component';
     ConfirmaPresencaComponent,
     ListaPresentesComponent,
     PaymentComponent,
-    CarrosselComponent
+    CarrosselComponent,
+    TextoCasalComponent
   ],
   imports: [
     BrowserModule,

@@ -38,7 +38,6 @@ $fontHeading: 'Great Vibes', cursive;
 }
 
 .letters {
-
   margin-top: -15px;
   color: #99c7de !important;
   position: absolute;
@@ -49,38 +48,6 @@ $fontHeading: 'Great Vibes', cursive;
   z-index: 2;
   font-size: xx-large;
   font-weight: 600;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  // background: url("../assets/floral-bg.jpeg");
-  background-color: #f0fdff;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  // opacity: $opacityValue;
-}
-
-.container-presentes::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  // background: url("../assets/floral-bg.jpeg");
-  background-color: #f0fdff;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-  // opacity: $opacityValue;
 }
 
 .quadrado {
@@ -163,20 +130,5 @@ h1 {
 
   flex-direction: column;
   text-align: center;
-
-}
-
-.container {
-  min-height: 70vh;
-}
-
-.cerimonia {
-  background: #d2edfc;
-}
-
-.container-presentes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
 }
