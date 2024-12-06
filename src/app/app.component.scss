@@ -76,24 +76,21 @@ $fontHeading: 'Great Vibes', cursive;
   right: 0;
   bottom: 0;
   left: 0;
-  background: url("../assets/canto-da-mata.jpg");
+  background: url("../assets/olho-casa.jpg");
   background-size: cover;
   width: 90%;
   height: 90%;
   margin: auto;
   object-fit: cover;
-  background-position: 50% 30%;
+  background-position: 30% 60%;
   background-repeat: no-repeat;
   z-index: -2;
-
-  filter: grayscale(15%);
-  opacity: 0.9;
 
 }
 
 h1 {
   font-size: 56px;
-  color: #fff;
+  color: black;
 
   @media (max-width: 768px) {
     margin-top: 20%;
